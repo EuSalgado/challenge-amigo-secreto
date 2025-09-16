@@ -25,3 +25,16 @@ function actualizarAmigos() {
     lista.appendChild(nuevoElemento);
   }
 }
+
+function sortearAmigo() {
+  const lista = document.querySelector('.name-list');
+  const elementoResultado = document.getElementById('resultado');
+
+  if (amigos.length > 1) {
+    const indiceAzar = Math.floor(Math.random() * amigos.length);
+    const amigoSorteado = amigos[indiceAzar];
+    lista.innerHTML = '';
+
+    elementoResultado.textContent = `¡El amigo sorteado es ${amigoSorteado}!`;
+  } else alert('Por favor agregue a más de un amigo');
+}
